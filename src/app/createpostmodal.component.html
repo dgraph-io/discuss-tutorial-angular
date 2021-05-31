@@ -1,0 +1,54 @@
+<div class="ui modal">
+  <div class="header">Create Post</div>
+  <div class="content">
+    <div class="description">
+      <form class="ui form">
+        <div class="field">
+          <label>Title</label>
+          <input name="title" [(ngModel)]="title" placeholder="Type title..." />
+        </div>
+        <div class="field">
+          <label>Category</label>
+          <select
+            name="category"
+            class="ui fluid dropdown"
+            [(ngModel)]="category"
+          >
+            <option value="">Select a Category</option>
+            <option
+              *ngFor="let category of categories"
+              class="item"
+              [value]="category.id"
+            >
+              {{ category.name }}
+            </option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Tags (optional)</label>
+          <input
+            name="tags"
+            [(ngModel)]="tags"
+            placeholder="Enter space separated tags..."
+          />
+        </div>
+        <div class="field">
+          <label>Your Message</label>
+          <textarea
+            name="message"
+            [(ngModel)]="message"
+            placholder="Enter your message..."
+            rows="3"
+          ></textarea>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="ui black button" (click)="close()">Cancel</button>
+    <button class="ui icon positive right labeled button" (click)="addPost()">
+      <i aria-hidden="true" class="checkmark icon"></i>
+      Submit
+    </button>
+  </div>
+</div>

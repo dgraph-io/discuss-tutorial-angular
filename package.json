@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm run build:css && ng serve",
+    "build": "npm run build:css && ng build",
+    "build:css": "postcss src/styles/tailwind.css -o src/styles/main.css",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -19,7 +20,13 @@
     "@angular/platform-browser": "~11.2.7",
     "@angular/platform-browser-dynamic": "~11.2.7",
     "@angular/router": "~11.2.7",
+    "@apollo/client": "^3.0.0",
+    "apollo-angular": "^2.4.0",
+    "graphql": "^15.0.0",
+    "luxon": "^1.26.0",
+    "postcss-import": "^14.0.0",
     "rxjs": "~6.6.0",
+    "semantic-ui-css": "^2.4.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },
@@ -29,6 +36,7 @@
     "@angular/compiler-cli": "~11.2.7",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "autoprefixer": "^10.2.5",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
@@ -37,7 +45,9 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "postcss-cli": "^8.3.1",
     "protractor": "~7.0.0",
+    "tailwindcss": "^2.0.4",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.1.5"
