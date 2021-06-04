@@ -6,9 +6,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'message-board-app';
-  modal: boolean = false;
-
-  openModal() {
-    this.modal = true;
-  }
 }
