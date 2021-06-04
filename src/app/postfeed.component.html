@@ -1,0 +1,55 @@
+<div class="layout-margin">
+  <div *ngIf="!loading">
+    <table class="ui very basic table">
+      <thead>
+        <tr>
+          <th>Posts</th>
+          <th>Category</th>
+          <th>Tags</th>
+          <th>Responses</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of posts" [key]="post.id">
+          <td>
+            <a routerLink="/post/{{ post?.id }}">
+              <h4 class="ui image header">
+                <img
+                  [src]="avatar(post?.author.avatarImg)"
+                  class="ui mini rounded image"
+                />
+                <div class="content">
+                  {{ post?.title }}
+                  <div class="sub header">{{ post?.author.displayName }}</div>
+                </div>
+              </h4>
+            </a>
+          </td>
+          <td>
+            <span class="ui red empty mini circular label"></span>
+            {{ " " + post?.category.name }}
+          </td>
+          <td>
+            <span
+              *ngFor="let tag of getTags(post)"
+              class="ui label basic grey"
+              [key]="tag"
+            >
+              {{ tag }}
+            </span>
+          </td>
+          <td>
+            <p>
+              <i class="heart outline icon"></i> {{ getLikes() }}
+              {{ getLikes() === 1 ? "Like" : "Likes" }}
+            </p>
+            <p>
+              <i class="comment outline icon"></i> {{ getReplies(post) }}
+              {{ getReplies(post) === 1 ? "Reply" : "Replies" }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
