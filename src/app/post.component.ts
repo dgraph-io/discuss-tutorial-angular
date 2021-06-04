@@ -48,7 +48,6 @@ const GET_POST = gql`
 @Component({
   selector: 'post',
   templateUrl: './post.component.html',
-  styleUrls: ['./app.component.css'],
 })
 export class PostComponent implements OnInit, OnDestroy {
   loading: boolean = true;
@@ -88,7 +87,8 @@ export class PostComponent implements OnInit, OnDestroy {
   }
 
   avatar(img: string | null | undefined) {
-    // return img ?? "/assets/" + Math.floor(Math.random() * (9 - 1) + 1) + ".svg"
-    return '/assets' + img;
+    return (
+      '/assets' + (img ?? Math.floor(Math.random() * (9 - 1) + 1) + '.svg')
+    );
   }
 }

@@ -28,7 +28,6 @@ const ALL_POSTS = gql`
 @Component({
   selector: 'post-feed',
   templateUrl: './postfeed.component.html',
-  styleUrls: ['./app.component.css'],
 })
 export class PostFeedComponent implements OnInit, OnDestroy {
   loading: boolean = true;
@@ -58,7 +57,7 @@ export class PostFeedComponent implements OnInit, OnDestroy {
   }
 
   getLikes() {
-    return 4;
+    return Math.floor(Math.random() * 10);
   }
 
   getTags(post: any) {
@@ -66,7 +65,8 @@ export class PostFeedComponent implements OnInit, OnDestroy {
   }
 
   avatar(img: string | null | undefined) {
-    // return img ?? "/assets/" + Math.floor(Math.random() * (9 - 1) + 1) + ".svg"
-    return '/assets' + img;
+    return (
+      '/assets' + (img ?? Math.floor(Math.random() * (9 - 1) + 1) + '.svg')
+    );
   }
 }

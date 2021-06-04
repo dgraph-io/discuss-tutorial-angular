@@ -102,23 +102,23 @@
         <strong>Dgraph Cloud</strong>
       </a>
     </span>
-    <!-- <Image size="mini" src="/lighting.svg" class="lightning-logo" /> -->
+    <img src="/assets/lighting.svg"  class="ui mini image lightning-logo" />
   </div>
 </div>
 <div class="App">
   <div class="ui clearing segment header-seg">
     <h3 class="ui left floated header header-seg-left">
-      <!-- <Link to="/"> -->
-      <div class="flex">
-        <span>
-          <img src="/assets/diggy.png" class="ui tiny image mr-5" />
-        </span>
-        <div>
-          <p class="header-text">Dgraph</p>
-          <p class="t-size">DISCUSS</p>
+      <a routerLink="/">
+        <div class="flex">
+          <span>
+            <img src="/assets/diggy.png" class="ui tiny image mr-5" />
+          </span>
+          <div>
+            <p class="header-text">Dgraph</p>
+            <p class="t-size">DISCUSS</p>
+          </div>
         </div>
-      </div>
-      <!-- </Link> -->
+      </a>
     </h3>
     <h3 class="ui right floated header header-seg-right">
       <span>
@@ -130,8 +130,8 @@
   </div>
   <create-post-modal *ngIf="modal"></create-post-modal>
   <router-outlet></router-outlet>
-  <p>
-    Learn about building GraphQL apps with Dgraph Cloud at
-    https://dgraph.io/learn
+  <p class="ml-5">
+      Learn about building GraphQL apps with Dgraph Cloud at
+      https://dgraph.io/learn
   </p>
 </div>

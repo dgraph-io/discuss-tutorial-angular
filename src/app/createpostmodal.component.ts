@@ -41,7 +41,6 @@ declare let $: any;
 @Component({
   selector: 'create-post-modal',
   templateUrl: './createpostmodal.component.html',
-  styleUrls: ['./app.component.css'],
 })
 export class CreatePostModalComponent implements OnInit, OnDestroy {
   loading: boolean = true;
@@ -84,8 +83,9 @@ export class CreatePostModalComponent implements OnInit, OnDestroy {
   }
 
   avatar(img: string | null | undefined) {
-    // return img ?? "/assets/" + Math.floor(Math.random() * (9 - 1) + 1) + ".svg"
-    return '/assets' + img;
+    return (
+      '/assets' + (img ?? Math.floor(Math.random() * (9 - 1) + 1) + '.svg')
+    );
   }
 
   close() {

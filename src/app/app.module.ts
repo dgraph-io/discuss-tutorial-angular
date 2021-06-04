@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { PostFeedComponent } from './postfeed.component';
 import { PostComponent } from './post.component';
 import { HomeComponent } from './home.component';
-import { HeaderComponent } from './header.component';
 import { CreatePostModalComponent } from './createpostmodal.component';
 import { FormsModule } from '@angular/forms';
 
@@ -18,7 +17,6 @@ import { FormsModule } from '@angular/forms';
     PostComponent,
     HomeComponent,
     PostFeedComponent,
-    HeaderComponent,
     CreatePostModalComponent,
   ],
   imports: [
