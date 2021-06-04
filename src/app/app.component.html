@@ -120,6 +120,14 @@
         </div>
       </a>
     </h3>
+    <h3 class="ui right floated header header-seg-right">
+      <span>
+        <button class="ui button dgraph-btn mr-1" (click)="openModal()">
+          Create Post
+        </button>
+      </span>
+    </h3>
   </div>
+  <create-post-modal *ngIf="modal"></create-post-modal>
   <router-outlet></router-outlet>
 </div>
